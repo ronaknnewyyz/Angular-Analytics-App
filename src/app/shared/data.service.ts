@@ -3,6 +3,8 @@ import { Http } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/of';
 
 import { ILineData, IBarData, ILineEventData } from './data.interface';
 
@@ -33,7 +35,12 @@ export class DataService {
 
   fetchLineData(): Observable<ILineData> {
     return this.http.get(this.lineDataURL)
-      .map(response => response.json().data as ILineData);
+      .map(response => response.json().data as ILineData)
+      .catch(this.handleError);
+  }
+
+  private handleError(e: any): Observable<any> {
+    return Observable.of<ILineData[]>([]);
   }
 
   getBarData(): any {
