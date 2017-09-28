@@ -13,7 +13,7 @@ import { ILineEventName } from '../shared/data.interface';
 export class LineChartComponent implements OnInit {
 
   @ViewChild('line') private lineContainer: ElementRef;
-  condition: string;
+  condition: ILineEventName;
   data: Array<any>;
   eventConditions: ILineEventName[] = [
     {event: 'pushRO', name: 'Push Repair Order'},
@@ -33,11 +33,11 @@ export class LineChartComponent implements OnInit {
     private dataService: DataService,
     private location: Location
   ) {
-    this.condition = 'pushRO';
+    this.condition = this.eventConditions[0];
   }
 
   ngOnInit() {
-    this.generateLineData(this.condition);
+    this.generateLineData(this.condition.event);
   }
 
   generateLineData(option: string): void {
@@ -49,7 +49,7 @@ export class LineChartComponent implements OnInit {
   }
 
   updateLineChart(option: string): void {
-    this.condition = option;
+    this.condition = this.eventConditions.find(e => e.event === option);
     this.generateLineData(option);
   }
 

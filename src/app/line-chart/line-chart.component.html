@@ -3,12 +3,11 @@
 </h3>
 <h4>
   <nav>
-    <!--<div *ngIf="condition">Selected Event: ({{condition}} === pushRO) ? Push Repair Order : Enter Repair Order</div>-->
     <input type="button" value="Push Repair Order" (click)="updateLineChart('pushRO')">
     <input type="button" value="Enter Repair Order" (click)="updateLineChart('enterRO')">
     <input type="button" value="Welcome Tab" (click)="updateLineChart('welcomeTab')">
     <input type="button" value="Back" (click)="goBack()">
-    <div *ngIf="condition">Selected Event: {{(condition=='pushRO' ? 'push repair order' : 'enter repair order') | titlecase}}</div>
+    <div *ngIf="condition">Selected Event: {{condition.name | titlecase}}</div>
   </nav>
 </h4>
 <div class="d3-line" #line></div>
