@@ -1,5 +1,10 @@
 # AngularAnalyticsDisplay
 
+This project was created to learn and showcase the Core Angular features. 
+
+This app uses a combination of Angular and D3 libraries to display the Analytics Data in different ways.
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
 
 ## Development server
