@@ -36,6 +36,15 @@ export class InMemoryDataService implements InMemoryDbService {
         {date: new Date(2017, 9, 21), value: 48335},
         {date: new Date(2017, 9, 22), value: 47088},
         {date: new Date(2017, 9, 23), value: 27294}
+      ],
+      welcomeTab: [
+        {date: new Date(2017, 9, 17), value: 17},
+        {date: new Date(2017, 9, 18), value: 1384},
+        {date: new Date(2017, 9, 19), value: 1216},
+        {date: new Date(2017, 9, 20), value: 1069},
+        {date: new Date(2017, 9, 21), value: 1034},
+        {date: new Date(2017, 9, 22), value: 941},
+        {date: new Date(2017, 9, 23), value: 481}
       ]
     };
 

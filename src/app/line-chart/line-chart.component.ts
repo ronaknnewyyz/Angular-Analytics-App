@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, ViewEncapsulation } from '@an
 import * as d3 from 'd3';
 import { DataService } from '../shared/data.service';
 import { Location } from '@angular/common';
+import { ILineEventName } from '../shared/data.interface';
 
 @Component({
   selector: 'app-line-chart',
@@ -14,6 +15,11 @@ export class LineChartComponent implements OnInit {
   @ViewChild('line') private lineContainer: ElementRef;
   condition: string;
   data: Array<any>;
+  eventConditions: ILineEventName[] = [
+    {event: 'pushRO', name: 'Push Repair Order'},
+    {event: 'enterRO', name: 'Enter Repair Order'},
+    {event: 'welcomeTab', name: 'Welcome Tab'}
+  ];
   private margin: any = {top: 50, bottom: 50, left: 50, right: 50};
   private chart: any;
   private width: number;
@@ -75,6 +81,12 @@ export class LineChartComponent implements OnInit {
       .attr('class', 'axis axis-y')
       .attr('transform', `translate(${this.margin.left}, ${this.margin.top})`)
       .call(d3.axisLeft(this.yScale));
+
+    // Labeling on X-Axis
+    // svg.append('text')
+    //   .attr('transform', 'translate(' + (this.width / 2) + ',' + (this.height + this.margin.top + 50) + ')')
+    //   .style('text-anchor', 'middle')
+    //   .text('Days of the Week');
   }
 
   updateLine() {

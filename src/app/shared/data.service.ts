@@ -6,14 +6,7 @@ import 'rxjs/add/operator/map';
 
 import { ILineData, IBarData, ILineEventData } from './data.interface';
 
-const weekday = new Array(7);
-weekday[2] =  'Sunday';
-weekday[3] = 'Monday';
-weekday[4] = 'Tuesday';
-weekday[5] = 'Wednesday';
-weekday[6] = 'Thursday';
-weekday[0] = 'Friday';
-weekday[1] = 'Saturday';
+const weekday = ['Friday', 'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'];
 
 @Injectable()
 export class DataService {

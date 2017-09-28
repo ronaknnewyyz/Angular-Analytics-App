@@ -1,6 +1,7 @@
 export interface ILineData {
   pushRO: ILineEventData[];
   enterRO: ILineEventData[];
+  welcomeTab: ILineEventData[];
 }
 
 export interface ILineEventData {
