@@ -15,9 +15,22 @@ describe('DataService', () => {
     expect(service).toBeTruthy();
   }));
 
-  it('should fetch Bar Data ramdonly', inject([DataService], (service: DataService) => {
+  it('should fetch Bar Data ramdonly within range', inject([DataService], (service: DataService) => {
     const data1 = service.getBarData();
     const data2 = service.getBarData();
-    expect(data1[0][1]).not.toBe(data2[0][1]);
+    expect(data1[0][1]).toBeLessThan(11);
+    expect(data2[0][1]).toBeGreaterThanOrEqual(0);
+  }));
+
+  it('should fetch Line Data to be true', inject([DataService], (service: DataService) => {
+    const data1 = service.getLineData('pushRO');
+    const data2 = service.getLineData('enterRO');
+    expect(data1[0]).not.toBeNull();
+    expect(data2[0]).not.toBeNull();
+  }));
+
+  it('should fetch Line Data with condition', inject([DataService], (service: DataService) => {
+    const data1 = service.getLineData('sortRO');
+    expect(data1[0]).not.toBeDefined();
   }));
 });
