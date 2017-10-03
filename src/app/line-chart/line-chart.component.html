@@ -7,7 +7,7 @@
     <input type="button" value="Enter Repair Order" (click)="updateLineChart('enterRO')">
     <input type="button" value="Welcome Tab" (click)="updateLineChart('welcomeTab')">
     <input type="button" value="Back" (click)="goBack()">
-    <div *ngIf="condition">Selected Event: {{condition.name | titlecase}}</div>
+    <div class="selected-event" *ngIf="condition">Selected Event: {{condition.name | titlecase}}</div>
   </nav>
 </h4>
 <div class="d3-line" #line></div>

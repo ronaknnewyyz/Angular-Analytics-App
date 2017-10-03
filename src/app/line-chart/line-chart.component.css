@@ -1,9 +1,10 @@
-div {
+.selected-event {
   padding-top: 20px;
 }
 .d3-line {
   width: 100%;
   height: 400px;
+  padding-top: 20px;
 }
 .axis path,
 .axis line {
