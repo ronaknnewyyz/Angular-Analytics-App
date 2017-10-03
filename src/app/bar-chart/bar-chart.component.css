@@ -1,13 +1,3 @@
-h2 {
-  font-size: 2em;
-  margin-top: 0;
-  padding-top: 0;
-}
-h3 {
-  font-size: 1.8em;
-  color: #2E4053;
-  margin: 20px;
-}
 .d3-chart {
   width: 100%;
   height: 400px;

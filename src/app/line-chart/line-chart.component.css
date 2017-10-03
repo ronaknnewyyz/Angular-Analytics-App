@@ -1,18 +1,4 @@
-h1 {
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 16px;
-}
-h3 {
-  font-size: 1.8em;
-  color: #2E4053;
-  margin: 20px;
-}
-h4 {
-  font-size: 1.2em;
-  color: #2E4053;
-}
-h4 div {
+div {
   padding-top: 20px;
 }
 .d3-line {
