@@ -15,8 +15,17 @@ export class DataService {
 
   private lineDataURL = 'api/lineData';
   private barDataURL = 'api/eventsCount';
+  private username: string;
 
   constructor(private http: Http) { }
+
+  setUsername (name: string): void {
+    this.username = name;
+  }
+
+  getUsername(): string {
+    return this.username;
+  }
 
   getLineData(condition: string): Observable<number[]> {
     const line = [];

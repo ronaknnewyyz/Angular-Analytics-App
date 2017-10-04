@@ -1,0 +1,17 @@
+input {
+  width: 50%;
+  margin-left: 25%;
+}
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+.error-message {
+  padding: 5px;
+  margin-left: 25%;
+  margin-right: 25%;
+}

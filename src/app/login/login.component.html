@@ -1,0 +1,29 @@
+<div class="container">
+  <h2>User Sign-In</h2>
+  <h3>
+    <form (ngSubmit)="passUsername(user.name)" #loginForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name* </label>
+        <input type="text" class="form-control" id="name"
+               [(ngModel)]="user.name" name="name" #name="ngModel" required>
+        <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger error-message">
+          Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email ID </label>
+        <input type="email" class="form-control" id="email"
+               [(ngModel)]="user.email" name="email" #email="ngModel"
+               pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+        <div [hidden]="email.valid || email.pristine"
+             class="alert alert-danger error-message">
+          Email id not valid
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!loginForm.form.valid">Submit</button>
+    </form>
+  </h3>
+</div>
