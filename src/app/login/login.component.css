@@ -14,4 +14,9 @@ input {
   padding: 5px;
   margin-left: 25%;
   margin-right: 25%;
+  font-size: 18px;
+}
+
+.btn {
+  font-size: 18px;
 }
