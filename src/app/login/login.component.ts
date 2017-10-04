@@ -1,4 +1,5 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { IUser } from '../shared/data.interface';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +8,7 @@ import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   @Output() name: EventEmitter<string> = new EventEmitter();
-  user: {name: string, email: string} = {name: '', email: ''};
+  user: IUser = {name: '', email: ''};
 
   constructor() { }
 

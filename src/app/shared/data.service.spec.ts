@@ -33,4 +33,10 @@ describe('DataService', () => {
     const data1 = service.getLineData('sortRO');
     expect(data1[0]).not.toBeDefined();
   }));
+
+  it('should fetch correct username', inject([DataService], (service: DataService) => {
+    const name = 'Bob';
+    service.setUsername(name);
+    expect(service.getUsername()).toEqual(name);
+  }));
 });
